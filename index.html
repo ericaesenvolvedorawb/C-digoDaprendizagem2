@@ -3,162 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABC Kids - Jogo Educacional</title>
+    <title>ABC Kids - Aprendendo e Brincando</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="app-container">
-        <!-- Header com perfil e configurações -->
+        <!-- Header com elementos interativos -->
         <header class="app-header">
             <div class="header-left">
-                <div class="profile-btn" id="profileBtn">
-                    <span class="profile-icon">👦</span>
-                </div>
+                <button class="icon-btn profile-btn" id="profileBtn" aria-label="Perfil">
+                    <div class="btn-icon">🐰</div>
+                    <span class="btn-badge">3</span>
+                </button>
             </div>
+            
             <div class="header-center">
-                <h1 class="app-title">ABC Kids</h1>
-            </div>
-            <div class="header-right">
-                <div class="settings-btn" id="settingsBtn">
-                    <span class="settings-icon">⚙️</span>
+                <div class="logo-container">
+                    <div class="logo-icon">🌈</div>
+                    <h1 class="app-title">ABC Kids</h1>
                 </div>
+            </div>
+            
+            <div class="header-right">
+                <button class="icon-btn settings-btn" id="settingsBtn" aria-label="Configurações">
+                    <div class="btn-icon">⚙️</div>
+                </button>
             </div>
         </header>
 
         <!-- Conteúdo principal -->
         <main class="main-content">
-            <!-- Seção de boas-vindas -->
-            <section class="welcome-section">
-                <div class="welcome-message">
-                    <h2>Olá, João!</h2>
-                    <p>Vamos aprender brincando?</p>
+            <!-- Seção de status do jogador -->
+            <section class="player-status">
+                <div class="welcome-bubble">
+                    <div class="bubble-content">
+                        <h2>Olá, Amiguinho! 👋</h2>
+                        <p>Pronto para novas aventuras?</p>
+                    </div>
+                    <div class="bubble-tail"></div>
                 </div>
-                <div class="avatar-container">
-                    <div class="avatar">👦</div>
-                    <div class="level-badge">Nível 5</div>
+                
+                <div class="player-card">
+                    <div class="avatar-container">
+                        <div class="avatar" id="playerAvatar">🐻</div>
+                        <div class="level-ring">
+                            <span class="level">5</span>
+                        </div>
+                    </div>
+                    
+                    <div class="player-info">
+                        <h3>Joãozinho</h3>
+                        <div class="xp-bar">
+                            <div class="xp-fill" style="width: 70%"></div>
+                            <span class="xp-text">70/100 XP</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- Seção de atividades -->
-            <section class="activities-section">
-                <h3 class="section-title">Atividades</h3>
+            <!-- Menu de atividades principal -->
+            <section class="activities-menu">
+                <h2 class="section-title">Escolha sua Aventura! 🎯</h2>
+                
                 <div class="activities-grid">
                     <!-- Português -->
-                    <div class="activity-card" data-subject="portugues">
-                        <div class="card-icon">📚</div>
-                        <h4>Português</h4>
-                        <p>Letras, Palavras e Leitura</p>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 70%"></div>
+                    <button class="activity-btn portugues-btn" data-subject="portugues">
+                        <div class="activity-icon">📚</div>
+                        <div class="activity-content">
+                            <h3>Letras Mágicas</h3>
+                            <p>Aprenda o ABC</p>
+                            <div class="activity-progress">
+                                <div class="progress-dots">
+                                    <span class="dot completed"></span>
+                                    <span class="dot completed"></span>
+                                    <span class="dot completed"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <span class="progress-text">3/5</span>
+                            </div>
                         </div>
-                        <span class="progress-text">70% completo</span>
-                    </div>
+                        <div class="btn-sparkle">✨</div>
+                    </button>
 
                     <!-- Matemática -->
-                    <div class="activity-card" data-subject="matematica">
-                        <div class="card-icon">🔢</div>
-                        <h4>Matemática</h4>
-                        <p>Números e Contas</p>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 45%"></div>
+                    <button class="activity-btn matematica-btn" data-subject="matematica">
+                        <div class="activity-icon">🔢</div>
+                        <div class="activity-content">
+                            <h3>Números Divertidos</h3>
+                            <p>Conte e some</p>
+                            <div class="activity-progress">
+                                <div class="progress-dots">
+                                    <span class="dot completed"></span>
+                                    <span class="dot completed"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <span class="progress-text">2/5</span>
+                            </div>
                         </div>
-                        <span class="progress-text">45% completo</span>
-                    </div>
+                        <div class="btn-sparkle">✨</div>
+                    </button>
 
-                    <!-- Jogos -->
-                    <div class="activity-card" data-subject="jogos">
-                        <div class="card-icon">🎮</div>
-                        <h4>Jogos</h4>
-                        <p>Diversão e Aprendizado</p>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 30%"></div>
+                    <!-- Cores e Formas -->
+                    <button class="activity-btn cores-btn" data-subject="cores">
+                        <div class="activity-icon">🎨</div>
+                        <div class="activity-content">
+                            <h3>Mundo Colorido</h3>
+                            <p>Cores e formas</p>
+                            <div class="activity-progress">
+                                <div class="progress-dots">
+                                    <span class="dot completed"></span>
+                                    <span class="dot completed"></span>
+                                    <span class="dot completed"></span>
+                                    <span class="dot completed"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <span class="progress-text">4/5</span>
+                            </div>
                         </div>
-                        <span class="progress-text">30% completo</span>
-                    </div>
+                        <div class="btn-sparkle">✨</div>
+                    </button>
 
-                    <!-- Desafios -->
-                    <div class="activity-card" data-subject="desafios">
-                        <div class="card-icon">🏆</div>
-                        <h4>Desafios</h4>
-                        <p>Missões Especiais</p>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 20%"></div>
+                    <!-- Quebra-cabeça -->
+                    <button class="activity-btn puzzle-btn" data-subject="puzzle">
+                        <div class="activity-icon">🧩</div>
+                        <div class="activity-content">
+                            <h3>Quebra-Cabeça</h3>
+                            <p>Monte e divirta-se</p>
+                            <div class="activity-progress">
+                                <div class="progress-dots">
+                                    <span class="dot completed"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <span class="progress-text">1/5</span>
+                            </div>
                         </div>
-                        <span class="progress-text">20% completo</span>
-                    </div>
+                        <div class="btn-sparkle">✨</div>
+                    </button>
                 </div>
             </section>
 
-            <!-- Seção de conquistas -->
-            <section class="achievements-section">
-                <h3 class="section-title">Conquistas</h3>
-                <div class="achievements-carousel">
-                    <div class="achievement-item unlocked">
-                        <div class="achievement-icon">⭐</div>
-                        <span>Leitor Iniciante</span>
+            <!-- Seção de conquistas rápidas -->
+            <section class="quick-achievements">
+                <h2 class="section-title">Suas Conquistas 🏆</h2>
+                
+                <div class="achievements-scroll">
+                    <div class="achievement-item gold">
+                        <div class="achievement-badge">🥇</div>
+                        <div class="achievement-info">
+                            <h4>Leitor Iniciante</h4>
+                            <p>Leu 10 palavras</p>
+                        </div>
                     </div>
-                    <div class="achievement-item unlocked">
-                        <div class="achievement-icon">🔤</div>
-                        <span>ABC Completo</span>
+                    
+                    <div class="achievement-item silver">
+                        <div class="achievement-badge">🥈</div>
+                        <div class="achievement-info">
+                            <h4>Contador Expert</h4>
+                            <p>Contou até 20</p>
+                        </div>
                     </div>
+                    
+                    <div class="achievement-item bronze">
+                        <div class="achievement-badge">🥉</div>
+                        <div class="achievement-info">
+                            <h4>Artista Mirim</h4>
+                            <p>Coloriu 5 desenhos</p>
+                        </div>
+                    </div>
+                    
                     <div class="achievement-item locked">
-                        <div class="achievement-icon">➕</div>
-                        <span>Mestre da Matemática</span>
-                    </div>
-                    <div class="achievement-item locked">
-                        <div class="achievement-icon">📖</div>
-                        <span>Leitor Avançado</span>
+                        <div class="achievement-badge">🔒</div>
+                        <div class="achievement-info">
+                            <h4>Mestre dos Números</h4>
+                            <p>Complete 10 somas</p>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
 
-        <!-- Menu inferior -->
+        <!-- Navegação inferior -->
         <nav class="bottom-nav">
-            <div class="nav-item active" data-page="home">
-                <span class="nav-icon">🏠</span>
-                <span class="nav-label">Início</span>
-            </div>
-            <div class="nav-item" data-page="achievements">
-                <span class="nav-icon">🏆</span>
-                <span class="nav-label">Conquistas</span>
-            </div>
-            <div class="nav-item" data-page="resources">
-                <span class="nav-icon">🎨</span>
-                <span class="nav-label">Recursos</span>
-            </div>
-            <div class="nav-item" data-page="parents">
-                <span class="nav-icon">👨‍👩‍👧‍👦</span>
-                <span class="nav-label">Pais</span>
-            </div>
+            <button class="nav-btn active" data-page="home">
+                <div class="nav-icon">🏠</div>
+                <span class="nav-label">Casa</span>
+            </button>
+            
+            <button class="nav-btn" data-page="levels">
+                <div class="nav-icon">⭐</div>
+                <span class="nav-label">Níveis</span>
+            </button>
+            
+            <button class="nav-btn" data-page="achievements">
+                <div class="nav-icon">🏆</div>
+                <span class="nav-label">Troféus</span>
+            </button>
+            
+            <button class="nav-btn" data-page="shop">
+                <div class="nav-icon">🛍️</div>
+                <span class="nav-label">Loja</span>
+            </button>
+            
+            <button class="nav-btn" data-page="parents">
+                <div class="nav-icon">👨‍👩‍👧‍👦</div>
+                <span class="nav-label">Família</span>
+            </button>
         </nav>
     </div>
 
     <!-- Modal de Perfil -->
     <div class="modal" id="profileModal">
-        <div class="modal-content">
+        <div class="modal-content profile-modal">
             <div class="modal-header">
-                <h3>Meu Perfil</h3>
-                <span class="close-modal">&times;</span>
+                <h2>Meu Perfil 🐻</h2>
+                <button class="close-modal" aria-label="Fechar">✕</button>
             </div>
             <div class="modal-body">
-                <div class="profile-info">
-                    <div class="profile-avatar-large">👦</div>
-                    <h4>João Silva</h4>
-                    <p>Idade: 6 anos</p>
-                    <div class="profile-stats">
-                        <div class="stat">
-                            <span class="stat-value">5</span>
-                            <span class="stat-label">Nível</span>
+                <div class="profile-display">
+                    <div class="profile-avatar-large">🐻</div>
+                    <div class="profile-details">
+                        <h3>Joãozinho</h3>
+                        <p>6 anos • Aventureiro</p>
+                    </div>
+                </div>
+                
+                <div class="profile-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-info">
+                            <span class="stat-value">15</span>
+                            <span class="stat-label">Missões</span>
                         </div>
-                        <div class="stat">
-                            <span class="stat-value">150</span>
-                            <span class="stat-label">Pontos</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">12</span>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-info">
+                            <span class="stat-value">8</span>
                             <span class="stat-label">Conquistas</span>
                         </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-info">
+                            <span class="stat-value">23</span>
+                            <span class="stat-label">Lições</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="avatar-selection">
+                    <h4>Escolha seu Amiguinho:</h4>
+                    <div class="avatars-grid">
+                        <button class="avatar-option active" data-avatar="🐻">🐻</button>
+                        <button class="avatar-option" data-avatar="🐰">🐰</button>
+                        <button class="avatar-option" data-avatar="🐶">🐶</button>
+                        <button class="avatar-option" data-avatar="🐱">🐱</button>
+                        <button class="avatar-option" data-avatar="🦊">🦊</button>
+                        <button class="avatar-option" data-avatar="🐼">🐼</button>
                     </div>
                 </div>
             </div>
@@ -167,30 +274,68 @@
 
     <!-- Modal de Configurações -->
     <div class="modal" id="settingsModal">
-        <div class="modal-content">
+        <div class="modal-content settings-modal">
             <div class="modal-header">
-                <h3>Configurações</h3>
-                <span class="close-modal">&times;</span>
+                <h2>Configurações ⚙️</h2>
+                <button class="close-modal" aria-label="Fechar">✕</button>
             </div>
             <div class="modal-body">
-                <div class="settings-option">
-                    <span>Som</span>
-                    <div class="toggle-switch active"></div>
+                <div class="settings-group">
+                    <h3>Som e Música 🎵</h3>
+                    <div class="setting-item">
+                        <span>Música de Fundo</span>
+                        <div class="toggle-switch active" data-setting="music">
+                            <div class="toggle-handle"></div>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <span>Efeitos Sonoros</span>
+                        <div class="toggle-switch active" data-setting="sfx">
+                            <div class="toggle-handle"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="settings-option">
-                    <span>Música</span>
-                    <div class="toggle-switch active"></div>
+                
+                <div class="settings-group">
+                    <h3>Jogabilidade 🎮</h3>
+                    <div class="setting-item">
+                        <span>Dicas Automáticas</span>
+                        <div class="toggle-switch" data-setting="hints">
+                            <div class="toggle-handle"></div>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <span>Vibração</span>
+                        <div class="toggle-switch active" data-setting="vibration">
+                            <div class="toggle-handle"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="settings-option">
-                    <span>Efeitos Sonoros</span>
-                    <div class="toggle-switch"></div>
-                </div>
-                <div class="settings-option">
-                    <span>Modo Noturno</span>
-                    <div class="toggle-switch"></div>
+                
+                <div class="settings-group">
+                    <h3>Visual 👁️</h3>
+                    <div class="setting-item">
+                        <span>Modo Colorido</span>
+                        <div class="toggle-switch active" data-setting="colorMode">
+                            <div class="toggle-handle"></div>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <span>Animações</span>
+                        <div class="toggle-switch active" data-setting="animations">
+                            <div class="toggle-handle"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Efeitos visuais -->
+    <div class="floating-elements">
+        <div class="floating-star">⭐</div>
+        <div class="floating-heart">❤️</div>
+        <div class="floating-sparkle">✨</div>
     </div>
 
     <script src="js/script.js"></script>
