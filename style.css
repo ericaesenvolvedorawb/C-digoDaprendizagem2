@@ -2,218 +2,469 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Arial Rounded MT Bold', sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    color: #fff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
     min-height: 100vh;
-    padding: 20px;
+    overflow-x: hidden;
 }
 
-.container {
-    max-width: 400px;
+.app-container {
+    max-width: 480px;
     margin: 0 auto;
+    min-height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
-header {
+/* Header */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.header-left, .header-right {
+    width: 50px;
+}
+
+.header-center {
+    flex: 1;
     text-align: center;
+}
+
+.app-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.profile-btn, .settings-btn {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.profile-btn:hover, .settings-btn:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Conteúdo Principal */
+.main-content {
+    padding: 20px;
+    padding-bottom: 80px;
+}
+
+/* Seção de Boas-vindas */
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-message h2 {
+    color: #4facfe;
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+
+.welcome-message p {
+    color: #666;
+    font-size: 16px;
+}
+
+.avatar-container {
+    text-align: center;
+}
+
+.avatar {
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+
+.level-badge {
+    background: #ff6b6b;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Seções */
+.section-title {
+    color: #4facfe;
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Grid de Atividades */
+.activities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
     margin-bottom: 30px;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #4cc9f0;
+.activity-card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-color: #4facfe;
+}
+
+.activity-card[data-subject="portugues"]:hover {
+    border-color: #4facfe;
+}
+
+.activity-card[data-subject="matematica"]:hover {
+    border-color: #ff6b6b;
+}
+
+.activity-card[data-subject="jogos"]:hover {
+    border-color: #4cd964;
+}
+
+.activity-card[data-subject="desafios"]:hover {
+    border-color: #ffd166;
+}
+
+.card-icon {
+    font-size: 40px;
     margin-bottom: 10px;
 }
 
-.progress-container {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+.activity-card h4 {
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 16px;
 }
 
-.progress-title {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-}
-
-.progress-title h2 {
-    font-size: 18px;
-    font-weight: 600;
+.activity-card p {
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 10px;
 }
 
 .progress-bar {
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    height: 8px;
+    background: #e9ecef;
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #4cc9f0 0%, #4361ee 100%);
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
     border-radius: 10px;
-    width: 60%;
     transition: width 0.5s ease;
 }
 
-.progress-value {
-    text-align: right;
-    font-size: 14px;
-    color: #a5b1c2;
+.progress-text {
+    font-size: 10px;
+    color: #666;
 }
 
-.rewards-section {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.section-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 15px;
+/* Carrossel de Conquistas */
+.achievements-carousel {
     display: flex;
-    align-items: center;
-}
-
-.section-title i {
-    margin-right: 10px;
-    color: #4cc9f0;
-}
-
-.rewards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
+    overflow-x: auto;
+    padding: 10px 5px;
+    scrollbar-width: none;
 }
 
-.reward-item {
-    background: linear-gradient(135deg, #2d4059 0%, #222831 100%);
-    border-radius: 15px;
+.achievements-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.achievement-item {
+    flex: 0 0 auto;
+    width: 100px;
+    background: white;
     padding: 15px 10px;
+    border-radius: 15px;
     text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.reward-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+.achievement-item.unlocked {
+    border: 2px solid #4cd964;
 }
 
-.reward-icon {
-    font-size: 24px;
+.achievement-item.locked {
+    opacity: 0.6;
+    border: 2px dashed #ccc;
+}
+
+.achievement-icon {
+    font-size: 30px;
     margin-bottom: 8px;
-    color: #4cc9f0;
 }
 
-.reward-name {
-    font-size: 12px;
-    color: #a5b1c2;
-}
-
-.activities-section, .avatars-section, .secret-missions-section {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.activity-item, .avatar-item, .mission-item {
-    display: flex;
-    align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.activity-item:last-child, .avatar-item:last-child, .mission-item:last-child {
-    border-bottom: none;
-}
-
-.activity-item:hover, .avatar-item:hover, .mission-item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.activity-icon, .avatar-icon, .mission-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 15px;
+.achievement-item span {
+    font-size: 11px;
+    color: #333;
     font-weight: bold;
 }
 
-.activity-info, .avatar-info, .mission-info {
-    flex: 1;
+/* Menu Inferior */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 25px 25px 0 0;
+    max-width: 480px;
+    margin: 0 auto;
 }
 
-.activity-name, .avatar-name, .mission-name {
-    font-size: 16px;
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.nav-item.active {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.nav-item:hover:not(.active) {
+    transform: translateY(-2px);
+}
+
+.nav-icon {
+    font-size: 20px;
     margin-bottom: 5px;
 }
 
-.activity-desc, .avatar-desc, .mission-desc {
-    font-size: 12px;
-    color: #a5b1c2;
+.nav-label {
+    font-size: 10px;
+    font-weight: bold;
 }
 
-.activity-status, .avatar-status, .mission-status {
-    font-size: 14px;
-    color: #4cc9f0;
-    font-weight: 600;
-}
-
-.completed {
-    color: #4ade80;
-}
-
-.locked {
-    color: #ef4444;
-}
-
-.notification {
+/* Modais */
+.modal {
+    display: none;
     position: fixed;
-    top: 20px;
-    right: 20px;
-    background: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%);
-    color: white;
-    padding: 15px 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transform: translateX(150%);
-    transition: transform 0.5s ease;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    align-items: center;
+    justify-content: center;
 }
 
-.notification.show {
-    transform: translateX(0);
+.modal.active {
+    display: flex;
 }
 
+.modal-content {
+    background: white;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: modalAppear 0.3s ease;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    border-radius: 25px 25px 0 0;
+}
+
+.modal-header h3 {
+    margin: 0;
+}
+
+.close-modal {
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close-modal:hover {
+    transform: scale(1.2);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+/* Perfil */
+.profile-info {
+    text-align: center;
+}
+
+.profile-avatar-large {
+    font-size: 80px;
+    margin-bottom: 15px;
+}
+
+.profile-info h4 {
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+
+.profile-info p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4facfe;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Configurações */
+.settings-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.settings-option:last-child {
+    border-bottom: none;
+}
+
+.toggle-switch {
+    width: 50px;
+    height: 25px;
+    background: #ccc;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.toggle-switch.active {
+    background: #4cd964;
+}
+
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-switch.active::after {
+    transform: translateX(25px);
+}
+
+/* Responsividade */
 @media (max-width: 480px) {
-    .container {
-        padding: 0 10px;
+    .app-container {
+        border-radius: 0;
     }
     
-    .rewards-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .welcome-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .app-header {
+        border-radius: 0;
+    }
+    
+    .bottom-nav {
+        border-radius: 0;
     }
 }
