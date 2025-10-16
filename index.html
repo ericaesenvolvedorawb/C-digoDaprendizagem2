@@ -3,196 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABC Kids - Jogo Educacional</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Neuropsicologia na Educação Fundamental</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="app-container">
-        <!-- Header com perfil e configurações -->
-        <header class="app-header">
-            <div class="header-left">
-                <div class="profile-btn" id="profileBtn">
-                    <span class="profile-icon">👦</span>
-                </div>
-            </div>
-            <div class="header-center">
-                <h1 class="app-title">ABC Kids</h1>
-            </div>
-            <div class="header-right">
-                <div class="settings-btn" id="settingsBtn">
-                    <span class="settings-icon">⚙️</span>
-                </div>
-            </div>
-        </header>
+    <header>
+        <h1>🧠 Adaptações Neuropsicológicas para Aprendizagem</h1>
+        <p>Estratégias baseadas em aplicativos acessíveis para alunos atípicos</p>
+    </header>
 
-        <!-- Conteúdo principal -->
-        <main class="main-content">
-            <!-- Seção de boas-vindas -->
-            <section class="welcome-section">
-                <div class="welcome-message">
-                    <h2>Olá, João!</h2>
-                    <p>Vamos aprender brincando?</p>
-                </div>
-                <div class="avatar-container">
-                    <div class="avatar">👦</div>
-                    <div class="level-badge">Nível 5</div>
-                </div>
-            </section>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="assets/dislexia.html">Dislexia</a></li>
+            <li><a href="assets/discalculia.html">Discalculia</a></li>
+            <li><a href="assets/disgrafia.html">Disgrafia</a></li>
+            <li><a href="assets/baixa-visao.html">Baixa Visão</a></li>
+            <li><a href="assets/gerador-imagens.html">Gerador de Imagens</a></li>
+        </ul>
+    </nav>
 
-            <!-- Seção de atividades -->
-            <section class="activities-section">
-                <h3 class="section-title">Atividades</h3>
-                <div class="activities-grid">
-                    <!-- Português -->
-                    <div class="activity-card" data-subject="portugues">
-                        <div class="card-icon">📚</div>
-                        <h4>Português</h4>
-                        <p>Letras, Palavras e Leitura</p>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 70%"></div>
-                        </div>
-                        <span class="progress-text">70% completo</span>
-                    </div>
+    <main>
+        <section class="intro">
+            <h2>Abordagem Centrada na Equidade</h2>
+            <p>Como neuropsicólogo da educação fundamental, minha abordagem é focada em <strong>equidade sobre igualdade</strong>, garantindo que cada aluno receba os recursos necessários para atingir seu potencial máximo.</p>
+        </section>
 
-                    <!-- Matemática -->
-                    <div class="activity-card" data-subject="matematica">
-                        <div class="card-icon">🔢</div>
-                        <h4>Matemática</h4>
-                        <p>Números e Contas</p>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 45%"></div>
-                        </div>
-                        <span class="progress-text">45% completo</span>
-                    </div>
-
-                    <!-- Jogos -->
-                    <div class="activity-card" data-subject="jogos">
-                        <div class="card-icon">🎮</div>
-                        <h4>Jogos</h4>
-                        <p>Diversão e Aprendizado</p>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 30%"></div>
-                        </div>
-                        <span class="progress-text">30% completo</span>
-                    </div>
-
-                    <!-- Desafios -->
-                    <div class="activity-card" data-subject="desafios">
-                        <div class="card-icon">🏆</div>
-                        <h4>Desafios</h4>
-                        <p>Missões Especiais</p>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 20%"></div>
-                        </div>
-                        <span class="progress-text">20% completo</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Seção de conquistas -->
-            <section class="achievements-section">
-                <h3 class="section-title">Conquistas</h3>
-                <div class="achievements-carousel">
-                    <div class="achievement-item unlocked">
-                        <div class="achievement-icon">⭐</div>
-                        <span>Leitor Iniciante</span>
-                    </div>
-                    <div class="achievement-item unlocked">
-                        <div class="achievement-icon">🔤</div>
-                        <span>ABC Completo</span>
-                    </div>
-                    <div class="achievement-item locked">
-                        <div class="achievement-icon">➕</div>
-                        <span>Mestre da Matemática</span>
-                    </div>
-                    <div class="achievement-item locked">
-                        <div class="achievement-icon">📖</div>
-                        <span>Leitor Avançado</span>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- Menu inferior -->
-        <nav class="bottom-nav">
-            <div class="nav-item active" data-page="home">
-                <span class="nav-icon">🏠</span>
-                <span class="nav-label">Início</span>
+        <section class="cards">
+            <div class="card" onclick="location.href='assets/dislexia.html'">
+                <h3>Dislexia</h3>
+                <p>Estratégias para automatizar a decodificação e desenvolver a fluência leitora</p>
             </div>
-            <div class="nav-item" data-page="achievements">
-                <span class="nav-icon">🏆</span>
-                <span class="nav-label">Conquistas</span>
+            
+            <div class="card" onclick="location.href='assets/discalculia.html'">
+                <h3>Discalculia</h3>
+                <p>Adaptações para concretizar o abstrato e fortalecer o senso numérico</p>
             </div>
-            <div class="nav-item" data-page="resources">
-                <span class="nav-icon">🎨</span>
-                <span class="nav-label">Recursos</span>
+            
+            <div class="card" onclick="location.href='assets/disgrafia.html'">
+                <h3>Disgrafia</h3>
+                <p>Recursos para contornar dificuldades motoras na expressão escrita</p>
             </div>
-            <div class="nav-item" data-page="parents">
-                <span class="nav-icon">👨‍👩‍👧‍👦</span>
-                <span class="nav-label">Pais</span>
+            
+            <div class="card" onclick="location.href='assets/baixa-visao.html'">
+                <h3>Baixa Visão</h3>
+                <p>Ferramentas de transformação e amplificação da informação visual</p>
             </div>
-        </nav>
-    </div>
+        </section>
+    </main>
 
-    <!-- Modal de Perfil -->
-    <div class="modal" id="profileModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Meu Perfil</h3>
-                <span class="close-modal">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="profile-info">
-                    <div class="profile-avatar-large">👦</div>
-                    <h4>João Silva</h4>
-                    <p>Idade: 6 anos</p>
-                    <div class="profile-stats">
-                        <div class="stat">
-                            <span class="stat-value">5</span>
-                            <span class="stat-label">Nível</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">150</span>
-                            <span class="stat-label">Pontos</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">12</span>
-                            <span class="stat-label">Conquistas</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal de Configurações -->
-    <div class="modal" id="settingsModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Configurações</h3>
-                <span class="close-modal">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="settings-option">
-                    <span>Som</span>
-                    <div class="toggle-switch active"></div>
-                </div>
-                <div class="settings-option">
-                    <span>Música</span>
-                    <div class="toggle-switch active"></div>
-                </div>
-                <div class="settings-option">
-                    <span>Efeitos Sonoros</span>
-                    <div class="toggle-switch"></div>
-                </div>
-                <div class="settings-option">
-                    <span>Modo Noturno</span>
-                    <div class="toggle-switch"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="js/script.js"></script>
+    <footer>
+        <p>Desenvolvido com base nas estratégias neuropsicológicas discutidas</p>
+    </footer>
 </body>
 </html>
